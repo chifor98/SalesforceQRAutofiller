@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - QR Autofiller</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #111;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        a {
+            color: #007bff;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .date {
+            text-align: center;
+            color: #777;
+            font-size: 0.9em;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Política de Privacidad de QR Autofiller</h1>
+        <p class="date">Fecha de entrada en vigor: 21 de mayo de 2025</p>
+
+        <h2>1. Introducción</h2>
+        <p>Bienvenido/a a QR Autofiller (en adelante, "la Extensión"). Esta Política de Privacidad explica qué información recopilamos, cómo la usamos y protegemos, y tus derechos con respecto a tu información cuando utilizas nuestra Extensión.</p>
+        <p>La finalidad principal de QR Autofiller es ayudarte a gestionar y utilizar tus códigos de autenticación de dos factores (2FA) basados en TOTP (Contraseña de un solo uso basada en tiempo) de una manera más sencilla y segura, principalmente mediante el autocompletado de dichos códigos en los sitios web.</p>
+
+        <h2>2. Información que Recopilamos y Por Qué</h2>
+        <p>La Extensión necesita recopilar y almacenar cierta información para funcionar correctamente. Toda esta información se almacena localmente en tu dispositivo.</p>
+        <ul>
+            <li>
+                <strong>Datos de Cuentas de Autenticación:</strong>
+                <ul>
+                    <li><strong>Clave Secreta TOTP:</strong> Esencial para generar tus códigos de verificación. Se obtiene al escanear un código QR, capturarlo de la pantalla o si la añades manualmente.</li>
+                    <li><strong>Etiqueta de Cuenta (Label) y Emisor (Issuer):</strong> Usualmente, esto incluye tu nombre de usuario, dirección de correo electrónico o el nombre del servicio (ej., "Google:usuario@ejemplo.com"). Se utiliza para que puedas identificar tus diferentes cuentas 2FA dentro de la Extensión.</li>
+                    <li><strong>Dominio Web Asociado (Opcional):</strong> Si proporcionas un dominio web (ej., "google.com"), lo almacenamos para ayudar a identificar cuándo ofrecer el autocompletado para esta cuenta en el sitio web correspondiente.</li>
+                    <li><strong>Preferencia de Tipo de Coincidencia (Autocompletado):</strong> Guardamos tu elección (solo dominio, solo nombre de usuario, o dominio y nombre de usuario) sobre cómo la Extensión debe buscar una coincidencia para autocompletar el código de esta cuenta.</li>
+                    <li><strong>Imagen del QR (Miniatura, Opcional):</strong> Podemos almacenar una pequeña imagen (miniatura) del código QR que escaneaste o capturaste para ayudarte a identificar visualmente la cuenta dentro de la Extensión.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Datos de Interacción con Sitios Web (para la funcionalidad de Autocompletado):</strong>
+                <ul>
+                    <li><strong>URL (Dominio) de la Página Actual:</strong> Para proporcionar la función de autocompletado, nuestro script de contenido (que se ejecuta en tu navegador en las páginas web) necesita acceder al dominio de la página web que estás visitando. Esto se usa para compararlo con los dominios que has asociado a tus cuentas y determinar si alguna es relevante.</li>
+                    <li><strong>Contenido Específico del DOM de la Página:</strong> El script de contenido puede leer partes del Document Object Model (DOM) de la página para:
+                        <ul>
+                            <li>Identificar los campos de entrada donde se deben introducir los códigos MFA.</li>
+                            <li>Si has configurado una cuenta para coincidir por "Dominio y Nombre de Usuario", intentar encontrar un nombre de usuario visible en la página (como el que aparece en el formato "Username: tu_usuario" en algunas páginas de Salesforce, o desde campos de email/usuario). Este nombre de usuario identificado en la página se usa *únicamente para la coincidencia en ese momento* y no se almacena a largo plazo por la Extensión, a menos que ya sea parte de la etiqueta de la cuenta que tú guardaste.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <strong>Datos de Captura de Pantalla (Temporal):</strong>
+                <ul>
+                    <li>Cuando utilizas la función "Capturar QR de pantalla", se toma una imagen de la porción de tu pantalla que hayas seleccionado. Esta imagen se procesa localmente dentro de tu navegador para encontrar y decodificar el código QR. Los datos de esta imagen se utilizan de forma efímera para la decodificación y no son almacenados permanentemente por la Extensión (a excepción de la posible miniatura mencionada anteriormente).</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>3. Cómo Utilizamos tu Información</h2>
+        <p>Utilizamos la información recopilada exclusivamente para los siguientes propósitos:</p>
+        <ul>
+            <li>Generar los códigos de autenticación de un solo uso basados en tiempo (TOTP) para tus cuentas.</li>
+            <li>Autocompletar (rellenar automáticamente) estos códigos TOTP en los formularios de inicio de sesión y campos de MFA en los sitios web, basándose en los dominios que has asociado y tus preferencias de tipo de coincidencia.</li>
+            <li>Permitirte gestionar e identificar tus diferentes cuentas de autenticación de dos factores dentro de la interfaz de la Extensión.</li>
+        </ul>
+
+        <h2>4. Almacenamiento y Seguridad de los Datos</h2>
+        <p><strong>Toda tu información de cuentas de autenticación (incluyendo las claves secretas TOTP, etiquetas, emisores, dominios asociados y preferencias de tipo de coincidencia) se almacena localmente en tu ordenador utilizando el mecanismo de almacenamiento seguro proporcionado por tu navegador (`chrome.storage.local`).</strong></p>
+        <p><strong>Estos datos NO se envían, transmiten ni almacenan en ningún servidor externo.</strong> Permanecen exclusivamente dentro del almacenamiento local de tu navegador, bajo tu control.</p>
+        <p>Confiamos en las medidas de seguridad implementadas por tu navegador y tu sistema operativo para proteger esta información almacenada localmente.</p>
+
+        <h2>5. Compartición de Datos</h2>
+        <p>Nos comprometemos con tu privacidad. <strong>No vendemos, comerciamos, ni transferimos de ninguna otra manera tu información personal identificable o datos de autenticación a terceros.</strong> Toda la información manejada por la Extensión es para el único propósito de su funcionalidad en tu dispositivo.</p>
+
+        <h2>6. Retención y Eliminación de Datos</h2>
+        <p>La información de tus cuentas se conserva en el almacenamiento local de la Extensión mientras tengas la cuenta configurada.</p>
+        <p>Tienes control total sobre tus datos:</p>
+        <ul>
+            <li>Puedes **eliminar** cualquier cuenta de autenticación (junto con todos sus datos asociados) en cualquier momento desde la interfaz del popup de la Extensión.</li>
+            <li>Si **desinstalas** la Extensión, todos los datos que haya almacenado localmente en tu navegador serán eliminados.</li>
+        </ul>
+        <p>Puedes acceder y visualizar la información de tus cuentas (excepto el secreto TOTP en sí mismo, por seguridad) a través de la interfaz del popup de la Extensión.</p>
+        
+        <h2>7. Permisos Utilizados por la Extensión</h2>
+        <p>Para su funcionamiento, la Extensión requiere los siguientes permisos, los cuales justificamos de la siguiente manera:</p>
+        <ul>
+            <li><strong>storage:</strong> Para guardar de forma segura y local la información de tus cuentas 2FA.</li>
+            <li><strong>activeTab:</strong> Para permitir que la función de "capturar QR de pantalla" opere sobre la pestaña activa cuando la inicias.</li>
+            <li><strong>scripting:</strong> Para inyectar el script de selección de área durante la captura de QR y para que el script de contenido pueda detectar campos MFA y autocompletar códigos en las páginas web.</li>
+            <li><strong>Permisos de host (ej. `&lt;all_urls&gt;`):</strong> Para que la funcionalidad de detección de campos y autocompletado de códigos TOTP pueda operar en cualquier sitio web donde puedas necesitar 2FA.</li>
+        </ul>
+
+        <h2>8. Privacidad de los Niños</h2>
+        <p>Nuestra Extensión no está dirigida a personas menores de 13 años. No recopilamos conscientemente información de identificación personal de niños menores de 13 años. Si eres padre o tutor y sabes que tu hijo nos ha proporcionado información personal, contáctanos para que podamos tomar las medidas necesarias.</p>
+
+        <h2>9. Cambios a esta Política de Privacidad</h2>
+        <p>Podemos actualizar nuestra Política de Privacidad de vez en cuando. Te notificaremos cualquier cambio publicando la nueva Política de Privacidad en esta página y/o en la página de la Extensión en la Chrome Web Store. Se te aconseja revisar esta Política de Privacidad periódicamente para cualquier cambio. Los cambios a esta Política de Privacidad son efectivos cuando se publican en esta página.</p>
+
+        <h2>10. Contáctanos</h2>
+        <p>Si tienes alguna pregunta sobre esta Política de Privacidad, puedes contactarnos en:</p>
+        <p>chiifor@gmail.com</p>
+    </div>
+</body>
+</html>
